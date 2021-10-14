@@ -15,20 +15,21 @@ const style = StyleSheet.create({
     borderRadius: 30,
     display: "flex",
     alignItems: "center",
-    paddingTop: 45,
+    paddingTop: 30,
     paddingBottom: 20,
   },
   loginTitle: {
-    fontSize: 50,
+    fontSize: 65,
     textAlign: "center",
     color: colors.primary,
-    marginBottom: 5,
+    marginBottom: -20,
     fontFamily: "Scheherazade_700Bold",
   },
   loginSubtitle: {
     fontSize: 16,
     fontWeight: "600",
     color: colors.darkPrimary,
+    fontFamily: "Nunito_600SemiBold",
   },
   inputView: {
     marginTop: 30,
@@ -38,6 +39,7 @@ const style = StyleSheet.create({
   },
   input: {
     minWidth: "85%",
+    fontFamily: "Nunito_600SemiBold",
     paddingLeft: 50,
     paddingRight: 20,
     paddingVertical: 18,
@@ -55,12 +57,14 @@ const style = StyleSheet.create({
   },
   noAccount: {
     color: colors.text,
+    fontFamily: "Nunito_600SemiBold",
     marginTop: 5,
     marginBottom: 5,
   },
   linkText: {
     color: colors.primary,
     fontWeight: "700",
+    fontFamily: "Nunito_700Bold",
     textDecorationLine: "underline",
   },
   button: {
@@ -73,6 +77,7 @@ const style = StyleSheet.create({
   buttonText: {
     fontSize: 16,
     color: colors.white,
+    fontFamily: "Nunito_700Bold",
     textAlign: "center",
     fontWeight: "600",
   },
