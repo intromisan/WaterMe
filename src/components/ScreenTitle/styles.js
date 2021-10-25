@@ -6,6 +6,8 @@ const style = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-end",
+    marginBottom: 10,
+    marginTop: "20%",
   },
   screenSubtitle: {
     textTransform: "uppercase",

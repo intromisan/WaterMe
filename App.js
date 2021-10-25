@@ -1,12 +1,12 @@
-import React from "react";
-import { StyleSheet, Text, View, StatusBar, SafeAreaView } from "react-native";
+import React, { useState } from "react";
+import "react-native-gesture-handler";
 import { Scheherazade_700Bold } from "@expo-google-fonts/scheherazade";
 import { Nunito_600SemiBold, Nunito_700Bold } from "@expo-google-fonts/nunito";
+import { NavigationContainer } from "@react-navigation/native";
 import AppLoading from "expo-app-loading";
 import { useFonts } from "expo-font";
 
-import LoginScreen from "./src/screens/Login";
-import MyGarden from "./src/screens/MyGarden";
+import RootStackScreen from "./src/navigation/RootStack";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -19,16 +19,9 @@ export default function App() {
     return <AppLoading />;
   } else {
     return (
-      <View style={style.mainView}>
-        {/* <LoginScreen /> */}
-        <MyGarden />
-      </View>
+      <NavigationContainer>
+        <RootStackScreen userToken={"aea"} />
+      </NavigationContainer>
     );
   }
 }
-
-const style = StyleSheet.create({
-  mainView: {
-    flex: 1,
-  },
-});
