@@ -2,26 +2,15 @@ import React from "react";
 import { ScrollView, View } from "react-native";
 import GardenItem from "../../components/GardenItem";
 import ScreenTitle from "../../components/ScreenTitle/ScreenTitle";
-import style from "./styles";
+import globalStyles from "../../config/styles";
 
 const MyGarden = () => {
   return (
     <ScrollView
-      style={style.myGardenContainer}
+      style={globalStyles.screenContainer}
       contentContainerStyle={{ paddingBottom: "25%" }}
     >
-      <ScreenTitle wishlist />
-      <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
-      <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
-      <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
-      <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
-      <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
-      <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
-      <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
-      <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
-      <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
-      <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
-      <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
+      <ScreenTitle wishlist title="My Garden" subtitle="Plant Collection" />
       <GardenItem title="Weeping Fig (Ficus)" reminders={false} />
     </ScrollView>
   );

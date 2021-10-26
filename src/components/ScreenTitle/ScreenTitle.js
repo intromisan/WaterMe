@@ -4,12 +4,12 @@ import style from "./styles";
 import { AntDesign } from "@expo/vector-icons";
 import colors from "../../config/colors";
 
-const ScreenTitle = ({ wishlist }) => {
+const ScreenTitle = ({ wishlist, subtitle, title }) => {
   return (
     <View style={style.screenTitleContainer}>
       <View>
-        <Text style={style.screenSubtitle}>Plant Collection</Text>
-        <Text style={style.screenTitle}>My Garden</Text>
+        <Text style={style.screenSubtitle}>{subtitle}</Text>
+        <Text style={style.screenTitle}>{title}</Text>
       </View>
       {wishlist && (
         <View>

@@ -8,7 +8,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import MyGarden from "../screens/MyGarden";
-import LoginScreen from "../screens/Login";
 import Explore from "../screens/Explore";
 import Search from "../screens/Search";
 import Reminder from "../screens/Reminder";
@@ -94,7 +93,7 @@ const MainNavigation = () => {
           position: "absolute",
         },
         tabBarActiveTintColor: "#63b68a",
-        tabBarInactiveTintColor: "#336657",
+        tabBarInactiveTintColor: "#87a29b",
       }}
     >
       <Tabs.Screen
@@ -107,7 +106,7 @@ const MainNavigation = () => {
                 name="book-open"
                 size={24}
                 color="black"
-                style={{ color: focused ? "#63b68a" : "#336657" }}
+                style={{ color: focused ? "#63b68a" : "#87a29b" }}
               />
             </View>
           ),
@@ -123,7 +122,7 @@ const MainNavigation = () => {
                 name="wikipedia"
                 size={24}
                 color="black"
-                style={{ color: focused ? "#63b68a" : "#336657" }}
+                style={{ color: focused ? "#63b68a" : "#87a29b" }}
               />
             </View>
           ),
@@ -139,7 +138,7 @@ const MainNavigation = () => {
                 name="search"
                 size={32}
                 color="black"
-                style={{ color: focused ? "#63b68a" : "#336657" }}
+                style={{ color: focused ? "#63b68a" : "#87a29b" }}
               />
             </View>
           ),
@@ -154,9 +153,9 @@ const MainNavigation = () => {
             <View>
               <MaterialCommunityIcons
                 name="watering-can-outline"
-                size={24}
+                size={26}
                 color="black"
-                style={{ color: focused ? "#63b68a" : "#336657" }}
+                style={{ color: focused ? "#63b68a" : "#87a29b" }}
               />
             </View>
           ),
@@ -172,7 +171,7 @@ const MainNavigation = () => {
                 name="ios-leaf-outline"
                 size={24}
                 color="black"
-                style={{ color: focused ? "#63b68a" : "#336657" }}
+                style={{ color: focused ? "#63b68a" : "#87a29b" }}
               />
             </View>
           ),
