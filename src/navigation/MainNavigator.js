@@ -1,5 +1,10 @@
 import React from "react";
+import { View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
+import { Feather } from "@expo/vector-icons";
+import { Zocial } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import MyGarden from "../screens/MyGarden";
@@ -8,6 +13,7 @@ import Explore from "../screens/Explore";
 import Search from "../screens/Search";
 import Reminder from "../screens/Reminder";
 import Wiki from "../screens/Wiki";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 const Tabs = createBottomTabNavigator();
 const MyGardenStack = createStackNavigator();
@@ -56,6 +62,26 @@ const WikiStackScreen = () => {
   );
 };
 
+const CustomTabBarButton = ({ children, onPress }) => {
+  return (
+    <TouchableWithoutFeedback
+      style={{ top: -12, justifyContent: "center", alignItems: "center" }}
+      onPress={onPress}
+    >
+      <View
+        style={{
+          width: 75,
+          height: 75,
+          borderRadius: 37,
+          backgroundColor: "#ffffff",
+        }}
+      >
+        {children}
+      </View>
+    </TouchableWithoutFeedback>
+  );
+};
+
 const MainNavigation = () => {
   return (
     <Tabs.Navigator
@@ -67,13 +93,91 @@ const MainNavigation = () => {
           borderTopColor: "transparent",
           position: "absolute",
         },
+        tabBarActiveTintColor: "#63b68a",
+        tabBarInactiveTintColor: "#336657",
       }}
     >
-      <Tabs.Screen name="Explore" component={ExploreStackScreen} />
-      <Tabs.Screen name="Wiki" component={WikiStackScreen} />
-      <Tabs.Screen name="Search" component={SearchStackScreen} />
-      <Tabs.Screen name="Reminder" component={RemindersStackScreen} />
-      <Tabs.Screen name="My Garden" component={MyGardenStackScreen} />
+      <Tabs.Screen
+        name="Explore"
+        component={ExploreStackScreen}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View>
+              <Feather
+                name="book-open"
+                size={24}
+                color="black"
+                style={{ color: focused ? "#63b68a" : "#336657" }}
+              />
+            </View>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="Wiki"
+        component={WikiStackScreen}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View>
+              <Zocial
+                name="wikipedia"
+                size={24}
+                color="black"
+                style={{ color: focused ? "#63b68a" : "#336657" }}
+              />
+            </View>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="Search"
+        component={SearchStackScreen}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View>
+              <Feather
+                name="search"
+                size={32}
+                color="black"
+                style={{ color: focused ? "#63b68a" : "#336657" }}
+              />
+            </View>
+          ),
+          tabBarButton: (props) => <CustomTabBarButton {...props} />,
+        }}
+      />
+      <Tabs.Screen
+        name="Reminder"
+        component={RemindersStackScreen}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View>
+              <MaterialCommunityIcons
+                name="watering-can-outline"
+                size={24}
+                color="black"
+                style={{ color: focused ? "#63b68a" : "#336657" }}
+              />
+            </View>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="My Garden"
+        component={MyGardenStackScreen}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View>
+              <Ionicons
+                name="ios-leaf-outline"
+                size={24}
+                color="black"
+                style={{ color: focused ? "#63b68a" : "#336657" }}
+              />
+            </View>
+          ),
+        }}
+      />
     </Tabs.Navigator>
   );
 };
