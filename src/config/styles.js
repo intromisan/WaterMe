@@ -6,6 +6,7 @@ const style = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.accent,
     paddingHorizontal: "5%",
+    position: "relative",
   },
 });
 

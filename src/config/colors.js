@@ -7,4 +7,6 @@ export default {
   darkAccent: "#d4ebe5",
   white: "#ffffff",
   red: "#faa5a0",
+  shadowColor: "#202322",
+  pink: "#fdbead",
 };
